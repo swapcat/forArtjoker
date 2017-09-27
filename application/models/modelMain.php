@@ -1,3 +1,9 @@
 <?php
 
-echo "<br />".'hallo i model_name';
+class Model {
+    
+    function __construct() {
+     
+        
+    }
+}
