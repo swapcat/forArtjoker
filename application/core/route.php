@@ -4,7 +4,7 @@ class Route {
     
     static function start() {
         
-        $controllerName = 'Main';
+        $controllerName = 'template';
         $actionName = 'index';
         
         $pathController = $_SERVER['REQUEST_URI'];
@@ -18,7 +18,7 @@ class Route {
         }
         
         
-        $controllerNamePre = 'Controller'.$controllerName;
+        $controllerNamePre = 'Controller_'.$controllerName;
         $controllerFile = strtolower($controllerNamePre).'.php';
         $filePath = 'application/controllers/'.$controllerFile;    
         
@@ -27,7 +27,7 @@ class Route {
         }
       
         
-        $modelName = 'Model'.$controllerName;
+        $modelName = 'Model_'.$controllerName;
         $modelFile = strtolower($modelName).'.php';
         $filePath = 'application/models/'.$modelFile;  
         
@@ -36,7 +36,8 @@ class Route {
         }
         
         $actionIndex = 'action_'.$actionName;
-        $controller = new $controllerName;
+        
+        $controller = new $controllerNamePre;
         $action -> $actionIndex;        var_dump(action);
     }
 }
